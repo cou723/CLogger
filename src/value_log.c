@@ -1,39 +1,39 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "log.h"
-#define LOG_INT(x) value_log(&x, #x, INT)
-#define LOG_SHORT(x) value_log(&x, #x, SHORT)
-#define LOG_FLOAT(x) value_log(&x, #x, FLOAT)
-#define LOG_DOUBLE(x) value_log(&x, #x, DOUBLE)
-#define LOG_CHAR(x) value_log(&x, #x, CHAR)
-#define LOG_STR(x) value_log(&x, #x, STR)
-#define LOG_LONG(x) value_log(&x, #x, LONG)
-#define LOG_LONG_LONG(x) value_log(&x, #x, LONG_LONG)
-#define LOG_UNSIGNED_INT(x) value_log(&x, #x, UNSIGEND_INT)
-#define LOG_UNSIGNED_SHORT(x) value_log(&x, #x, UNSIGNED_SHORT)
+#include "c_logger.h"
+#define LOG_INT(x) c_logger_value_log(&x, #x, C_LOGGER_INT)
+#define LOG_SHORT(x) c_logger_value_log(&x, #x, C_LOGGER_SHORT)
+#define LOG_FLOAT(x) c_logger_value_log(&x, #x, C_LOGGER_FLOAT)
+#define LOG_DOUBLE(x) c_logger_value_log(&x, #x, C_LOGGER_DOUBLE)
+#define LOG_CHAR(x) c_logger_value_log(&x, #x, C_LOGGER_CHAR)
+#define LOG_STR(x) c_logger_value_log(&x, #x, C_LOGGER_STR)
+#define LOG_LONG(x) c_logger_value_log(&x, #x, C_LOGGER_LONG)
+#define LOG_LONG_LONG(x) c_logger_value_log(&x, #x, C_LOGGER_LONG_LONG)
+#define LOG_UNSIGNED_INT(x) c_logger_value_log(&x, #x, C_LOGGER_UNSIGNED_INT)
+#define LOG_UNSIGNED_SHORT(x) c_logger_value_log(&x, #x, C_LOGGER_UNSIGNED_SHORT)
 
-void value_log(void *value, char *value_name, TYPE format) {
+void c_logger_value_log(void *value, char *value_name, C_LOGGER_TYPE format) {
     char buf[1024];
-    if (format == INT)
+    if (format == C_LOGGER_INT)
         sprintf(buf, "%s (int) : %d", value_name, *(int *)value);
-    else if (format == SHORT)
+    else if (format == C_LOGGER_SHORT)
         sprintf(buf, "%s (short) : %d", value_name, *(short *)value);
-    else if (format == FLOAT)
+    else if (format == C_LOGGER_FLOAT)
         sprintf(buf, "%s (float) : %f", value_name, *(float *)value);
-    else if (format == DOUBLE)
+    else if (format == C_LOGGER_DOUBLE)
         sprintf(buf, "%s (double) : %lf", value_name, *(double *)value);
-    else if (format == CHAR)
+    else if (format == C_LOGGER_CHAR)
         sprintf(buf, "%s (char) : %c", value_name, *(char *)value);
-    else if (format == LONG)
+    else if (format == C_LOGGER_LONG)
         sprintf(buf, "%s (long) : %ld", value_name, *(long *)value);
-    else if (format == LONG_LONG)
+    else if (format == C_LOGGER_LONG_LONG)
         sprintf(buf, "%s (long long) : %lld", value_name,*(long long *)value);
-    else if (format == UNSIGNED_INT)
+    else if (format == C_LOGGER_UNSIGNED_INT)
         sprintf(buf, "%s (u int) : %u", value_name,*(unsigned int *)value);
-    else if (format == UNSIGNED_SHORT)
+    else if (format == C_LOGGER_UNSIGNED_SHORT)
         sprintf(buf, "%s (u short) : %u", value_name,*(unsigned short *)value);
-    else if (format == STR)
+    else if (format == C_LOGGER_STR)
         sprintf(buf, "%s (string) : %s", value_name, (char *)value);
-    debug_log(buf);
+    c_logger_debug_log(buf);
 }

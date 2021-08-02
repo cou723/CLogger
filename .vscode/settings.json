@@ -4,6 +4,6 @@
         "*.c": "c",
         "limits.h": "c",
         "stdio.h": "c",
-        "value_log.h": "c"
+        "c_logger_value.h": "c"
     }
 }

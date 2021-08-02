@@ -1,8 +1,8 @@
 #include <limits.h>
 #include <stdio.h>
 
-#include "log.h"
-#include "value_log.h"
+#include "c_logger.h"
+#include "c_logger_value.h"
 void test() {
     int i_max = INT_MAX;
     int i_min = INT_MIN;
