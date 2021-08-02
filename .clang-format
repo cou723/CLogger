@@ -1,0 +1,11 @@
+BasedOnStyle: Google
+AlignConsecutiveBitFields: Consecutive
+AllowAllArgumentsOnNextLine: true
+AllowShortEnumsOnASingleLine: true
+IndentWidth: 4
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterCaseLabel: false
+  AfterControlStatement: Never
+  BeforeWhile: false
+  IndentBraces: false
