@@ -1,6 +1,12 @@
 # CLogger
 c言語用のloggerを練習がてらつくってみました
 
+# 導入方法
+1. `c_logger_value.h`と`c_logger.h`をincludesディレクトリに配置
+2. `logger.a`を一緒にコンパイル
+
+そうすると、loggerを使いたいファイルで適宜ヘッダファイルをインクルードしてもらえれば各種log用関数と数値出力用のlog関数が使えるようになります
+
 # 内容物
 - logger.a (静的ライブラリ本体)
 - include/c_logger.h (log出力用のヘッダー)
