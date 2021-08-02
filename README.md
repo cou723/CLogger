@@ -12,16 +12,21 @@ c言語用のloggerを練習がてらつくってみました
 - LOG 1
 - WARNING 2
 - ERROR 3
+- 
 があります
+
 後述のvalue_logを使うのに必要なマクロです
 
 ### typedef
 {INT,SHORT,FLOAT,DOUBLE,CHAR,STR,LONG,LONG_LONG,UNSIGNED_INT,UNSIGNED_SHORT}の値をとるenumのTYPE型を追加します
+
 後述のvalue_logを使うのに必要な型です
 
 ### グローバル変数
 - log_mode
+
 {DEBUG,LOG,WARN,ERROR}の値をとります
+
 以下のような効果を持ちます
 
 |値|効果|
@@ -39,6 +44,7 @@ void warning_log(char *output_str);
 void error_log(char *output_str);
 ```
 それぞれ`output_str`に渡された文字列を出力します
+
 出力するフォーマットは(DEBUGの場合は)
 `[DEBUG: 日時] output_str\n`
 のようになります
@@ -50,7 +56,9 @@ void error_log(char *output_str);
 ```
 
 ## value_log.h
+
 変数のデバッグに使えればなという機能があります
+
 関数型マクロがほぼすべてを占めています
 ### マクロ
 ```
@@ -66,6 +74,7 @@ void error_log(char *output_str);
 #define LOG_UNSIGNED_SHORT(x);
 ```
 それぞれの型の変数を変数名付きで出力する関数(関数型マクロ)です
+
 全てdebugとして出力します
 
 ### 関数
