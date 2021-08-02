@@ -11,7 +11,7 @@ LIB := ./$(PROGRAM)
 test: test
 
 test: $(SRCDIR)/log.c $(SRCDIR)/value_log.c $(SRCDIR)/test.c
-	$(CC) $(CFLAG) $(SRCDIR)/value_log.c $(SRCDIR)/log.c $(SRCDIR)/test.c -o ./$@
+	$(CC) $(INCLUDE) $(CFLAG) $(SRCDIR)/value_log.c $(SRCDIR)/log.c $(SRCDIR)/test.c -o ./$@
 
 all: $(OBJS) $(LIB)
 
