@@ -17,7 +17,6 @@ typedef enum {
     C_LOGGER_UNSIGNED_INT,
     C_LOGGER_UNSIGNED_SHORT
 } C_LOGGER_TYPE;
-int c_logger_log_mode;
 void c_logger_debug_log(char *output_str);
 void c_logger_log(char *output_str);
 void c_logger_warning_log(char *output_str);

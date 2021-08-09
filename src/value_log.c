@@ -13,6 +13,8 @@
 #define LOG_UNSIGNED_INT(x) c_logger_value_log(&x, #x, C_LOGGER_UNSIGNED_INT)
 #define LOG_UNSIGNED_SHORT(x) c_logger_value_log(&x, #x, C_LOGGER_UNSIGNED_SHORT)
 
+extern int c_logger_log_mode;
+
 void c_logger_value_log(void *value, char *value_name, C_LOGGER_TYPE format) {
     char buf[1024];
     if (format == C_LOGGER_INT)
