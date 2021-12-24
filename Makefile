@@ -1,4 +1,4 @@
-PROGRAM := logger.a
+PROGRAM := libLogger.a
 CC := gcc
 CFLAG := -Wall -Wextra -Werror
 INCLUDE := -I./include
@@ -8,12 +8,13 @@ SRCS := $(SRCDIR)/log.c $(SRCDIR)/value_log.c
 OBJS := $(SRCS:%.c=%.o)
 LIB := ./$(PROGRAM)
 
-test: test
-
 test: $(SRCDIR)/log.c $(SRCDIR)/value_log.c $(SRCDIR)/test.c
-	$(CC) $(INCLUDE) $(CFLAG) $(SRCDIR)/value_log.c $(SRCDIR)/log.c $(SRCDIR)/test.c -o ./$@
+	$(CC) $(INCLUDE) $(CFLAG) $(SRCDIR)/test.c -o ./$@ -L./ -lLogger
 
-all: $(OBJS) $(LIB)
+test2: $(SRCDIR)/log.c $(SRCDIR)/value_log.c $(SRCDIR)/test2.c
+	$(CC) $(INCLUDE) $(CFLAG) $(SRCDIR)/test2.c -o ./$@ -L./ -lLogger
+
+lib: $(OBJS) $(LIB)
 
 $(OBJS): $(SRCS)
 	$(CC) $(INCLUDE) $(CFLAG) -c $(@:%.o=%.c) -o ./$@
@@ -31,4 +32,4 @@ clean:
 fclean: clean
 	rm $(LIB)
 
-re: fclean all
+re: fclean test

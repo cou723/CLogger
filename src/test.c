@@ -4,17 +4,13 @@
 #include "c_logger.h"
 #include "c_logger_value.h"
 void test() {
-    int i_max = INT_MAX;
-    int i_min = INT_MIN;
-    short s_max = SHRT_MAX;
-    short s_min = SHRT_MIN;
+    int i_max = INT_MAX, i_min = INT_MIN;
+    short s_max = SHRT_MAX, s_min = SHRT_MIN;
     float fl = 3.14;
     double d_max = 3.1415;
     char c_test = 'a';
-    long l_max = LONG_MAX;
-    long l_min = LONG_MIN;
-    long long ll_max = LLONG_MAX;
-    long long ll_min = LLONG_MIN;
+    long l_max = LONG_MAX, l_min = LONG_MIN;
+    long long ll_max = LLONG_MAX, ll_min = LLONG_MIN;
     unsigned int ui_max = UINT_MAX;
     unsigned short us_max = USHRT_MAX;
     char str[] = "string";
